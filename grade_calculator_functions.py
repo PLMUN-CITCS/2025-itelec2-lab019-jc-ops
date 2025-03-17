@@ -1,26 +1,24 @@
+"""Obtains student score and gives corresponding grade."""
 def get_student_score():
+    """Prompts user for student score and returns it."""
+    sscore = int(input("Enter your score: "))
+    return sscore
 
-    while True:
-        try:
-            score = float(input("Enter your score: "))
-            return score
-        except ValueError:
-            print("Invalid input. Please enter a numeric value.")
-
-def calculate_grade(score):
-    
-    if 90 <= score <= 100:
-        return 'A'
-    elif 80 <= score < 90:
-        return 'B'
-    elif 70 <= score < 80:
-        return 'C'
-    elif 60 <= score < 70:
-        return 'D'
+def calculate_grades(ssscore):
+    """Returns the grade corresponding to the student score."""
+    if ssscore >= 90:
+        grade = "A"
+    elif ssscore >= 80:
+        grade = "B"
+    elif ssscore >= 70:
+        grade = "C"
+    elif ssscore >= 60:
+        grade = "D"
     else:
-        return 'F'
+        grade = "F"
+    return grade
 
-
-score = get_student_score()
-grade = calculate_grade(score)
-print(f"Your Grade is: {grade}")
+if __name__ == "__main__":
+    score = get_student_score()
+    GRADE = calculate_grades(score)
+    print(f"Your Grade is: {GRADE}")
